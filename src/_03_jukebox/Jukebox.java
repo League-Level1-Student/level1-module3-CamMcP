@@ -1,10 +1,6 @@
 package _03_jukebox;
-/*
- *    Copyright (c) The League of Amazing Programmers 2013-2019
- *    Level 1
- */
 
-
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -13,9 +9,17 @@ import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.SwingUtilities;
 
 import javazoom.jl.player.advanced.AdvancedPlayer;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+/*
+ *    Copyright (c) The League of Amazing Programmers 2013-2019
+ *    Level 1
+ */
+
 
 /*   If you don't have javazoom.jar in your project, you can download it from here: http://bit.ly/javazoom
  *   Right click your project and add it as a JAR (Under Java Build Path > Libraries).*/
@@ -26,9 +30,12 @@ public class Jukebox implements Runnable {
 
 		// 1. Find an mp3 on your computer or on the Internet.
 		// 2. Create a Song object for that mp3
-
+    	Song FourtyTwo = new Song("https://www.youtube.com/watch?v=YOtoo_vA6jY");
 		// 3. Play the Song
-
+        Song Walk = new Song("https://www.youtube.com/watch?v=zHF6Wqee_jE");
+        Song Pig = new Song("https://www.youtube.com/watch?v=4ZP26hcHtmI");
+        Song Rush = new Song("https://www.youtube.com/watch?v=RBuZFJKquh0");
+        Song Mall = new Song("https://www.youtube.com/watch?v=kleaVWJESuA");
 		/*
 		 * 4. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -36,6 +43,13 @@ public class Jukebox implements Runnable {
 		 * cover is clicked, stop the currently playing song, and play the one
 		 * that was selected.
 		 */
+ JFrame f = new JFrame();
+ JButton FT = new JButton();
+ JButton W = new JButton();
+ JButton P = new JButton();
+ JButton R = new JButton();
+ JButton M = new JButton();
+
     }
     
     
