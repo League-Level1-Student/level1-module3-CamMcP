@@ -1,5 +1,6 @@
 package _03_jukebox;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,7 +25,7 @@ import javax.swing.JFrame;
 /*   If you don't have javazoom.jar in your project, you can download it from here: http://bit.ly/javazoom
  *   Right click your project and add it as a JAR (Under Java Build Path > Libraries).*/
 
-public class Jukebox implements Runnable {
+public class Jukebox implements ActionListener {
 
     public void run() {
 
@@ -49,7 +50,11 @@ public class Jukebox implements Runnable {
  JButton P = new JButton();
  JButton R = new JButton();
  JButton M = new JButton();
-
+FT.addActionListener(this);
+W.addActionListener(this);
+P.addActionListener(this);
+R.addActionListener(this);
+M.addActionListener(this);
     }
     
     
@@ -58,6 +63,13 @@ public class Jukebox implements Runnable {
 		URL imageURL = getClass().getResource(fileName);
 		Icon icon = new ImageIcon(imageURL);
 		return new JLabel(icon);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
