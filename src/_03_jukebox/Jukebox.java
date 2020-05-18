@@ -10,6 +10,7 @@ import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
@@ -25,18 +26,25 @@ import javax.swing.JFrame;
 /*   If you don't have javazoom.jar in your project, you can download it from here: http://bit.ly/javazoom
  *   Right click your project and add it as a JAR (Under Java Build Path > Libraries).*/
 
-public class Jukebox implements ActionListener {
-
-    public void run() {
+public class Jukebox implements ActionListener, Runnable {
+	JButton FT = new JButton();
+	 JButton W = new JButton();
+	 JButton P = new JButton();
+	 JButton R = new JButton();
+	 JButton M = new JButton();
+	 Song FourtyTwo = new Song("https://www.youtube.com/watch?v=YOtoo_vA6jY");
+		// 3. Play the Song
+     Song Walk = new Song("https://www.youtube.com/watch?v=zHF6Wqee_jE");
+     Song Pig = new Song("https://www.youtube.com/watch?v=4ZP26hcHtmI");
+     Song Rush = new Song("https://www.youtube.com/watch?v=RBuZFJKquh0");
+     Song Mall = new Song("https://www.youtube.com/watch?v=kleaVWJESuA");
+	 public void run() {
 
 		// 1. Find an mp3 on your computer or on the Internet.
 		// 2. Create a Song object for that mp3
-    	Song FourtyTwo = new Song("https://www.youtube.com/watch?v=YOtoo_vA6jY");
+    	
 		// 3. Play the Song
-        Song Walk = new Song("https://www.youtube.com/watch?v=zHF6Wqee_jE");
-        Song Pig = new Song("https://www.youtube.com/watch?v=4ZP26hcHtmI");
-        Song Rush = new Song("https://www.youtube.com/watch?v=RBuZFJKquh0");
-        Song Mall = new Song("https://www.youtube.com/watch?v=kleaVWJESuA");
+       
 		/*
 		 * 4. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -45,16 +53,21 @@ public class Jukebox implements ActionListener {
 		 * that was selected.
 		 */
  JFrame f = new JFrame();
- JButton FT = new JButton();
- JButton W = new JButton();
- JButton P = new JButton();
- JButton R = new JButton();
- JButton M = new JButton();
+ JPanel j = new JPanel();
 FT.addActionListener(this);
 W.addActionListener(this);
 P.addActionListener(this);
 R.addActionListener(this);
 M.addActionListener(this);
+j.add(FT);
+j.add(W);
+j.add(P);
+j.add(R);
+j.add(M);
+f.add(j);
+f.pack();
+f.setVisible(true);
+
     }
     
     
@@ -69,7 +82,26 @@ M.addActionListener(this);
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		if (arg0.getSource() == FT) {
+			FourtyTwo.play();
+			System.out.println("Forty Two is now playing");
+					}
+		else if (arg0.getSource() == W) {
+			Walk.play();
+			System.out.println("Walk is now playing");
+		}
+		else if (arg0.getSource() == P) {
+			Pig.play();
+			System.out.println("Pig is now playing");
+		}
+		else if (arg0.getSource() == R) {
+			Rush.play();
+			System.out.println("Rush is now playing");
+		}
+		else {
+			Mall.play();
+			System.out.println("Mall is now playing");
+		}	
 	}
 
 }
