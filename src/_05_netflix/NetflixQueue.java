@@ -9,17 +9,22 @@ package _05_netflix;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import javax.swing.JOptionPane;
+
 public class NetflixQueue {
 	
 	ArrayList<Movie> movies = new ArrayList<Movie>();
 	
 	public Movie getBestMovie(){
 		this.sortMoviesByRating();
-		return movies.get(0);
+return movies.get(0);
+
 	}
 public Movie getSecondBestMovie(){
 	this.sortMoviesByRating();
 	return movies.get(1);
+	
+	
 }
 	public void addMovie(Movie movie) {
 		movies.add(movie);
