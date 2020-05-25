@@ -14,6 +14,7 @@ CowTimer(int minutes){
 	 this.minutes = minutes;
 }
 
+
 	/* 1. Make a constructor for the CowTimer class that initializes the minutes variable */
 	
 	/* 4. Complete the main method of the CowTimerRunner class */
