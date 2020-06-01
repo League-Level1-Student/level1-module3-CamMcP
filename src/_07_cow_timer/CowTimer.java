@@ -6,7 +6,10 @@ package _07_cow_timer;
 
 import java.applet.AudioClip;
 import java.io.IOException;
+import java.util.IllegalFormatCodePointException;
+
 import javax.swing.JApplet;
+import javax.swing.JOptionPane;
 
 public class CowTimer {
 private int minutes;
@@ -31,14 +34,18 @@ CowTimer(int minutes){
 		 * 2. Count down the minutes, print the current minute then sleep for the number of minutes
 		 * using Thread.sleep(int milliseconds). 
 		 */
-
+for (int i = minutes; minutes > 0; minutes--) {
+	System.out.println(minutes);
+	Thread.sleep(5000);
+}
+playSound("moo.wav");
 		}
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo sound.
 		 * You can use the .wav file in the default package, or you can download one
 		 * from freesound.org, then drag it intothe default package.
 		 */
-
+	
 	
 	
 	
